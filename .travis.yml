@@ -6,16 +6,17 @@ matrix:
     - sudo: required
       services:
         - docker
-      env: DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64
+      env: DOCKER_IMAGE=dockcross/manylinux-x64
     - sudo: required
       services:
         - docker
-      env: DOCKER_IMAGE=quay.io/pypa/manylinux1_i686
-           PRE_CMD=linux32
+      env: DOCKER_IMAGE=dockcross/manylinux-x86
 
 install:
   - docker pull $DOCKER_IMAGE
+  - docker run --rm $DOCKER_IMAGE > ./dockcross
+  - chmod +x ./dockcross
 
 script:
-  - docker run --rm -v `pwd`:/io $DOCKER_IMAGE $PRE_CMD /io/travis/build-wheels.sh
+  - ./dockcross travis/build-wheels.sh
   - ls wheelhouse/

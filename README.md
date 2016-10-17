@@ -2,7 +2,7 @@ python-manylinux-demo
 =====================
 Demo project for building Python wheels for Linux with Travis-CI
 
-[![Build Status](https://travis-ci.org/pypa/python-manylinux-demo.svg?branch=master)](https://travis-ci.org/pypa/python-manylinux-demo)
+[![Build Status](https://travis-ci.org/dockcross/python-manylinux-demo.svg?branch=dockcross)](https://travis-ci.org/dockcross/python-manylinux-demo)
 
 
 This is an example of how to use Travis-CI to build
@@ -15,8 +15,8 @@ running on Travis-CI to compile (you don't need to use docker at all to _use_
 these wheels, it's just to compile them). The docker-based build environment
 images are:
 
-- 64-bit image (x86-64): ``quay.io/pypa/manylinux1_x86_64`` [![Docker Repository on Quay](https://quay.io/repository/pypa/manylinux1_x86_64/status "Docker Repository on Quay")](https://quay.io/repository/pypa/manylinux1_x86_64)
-- 32-bit image (i686): ``quay.io/pypa/manylinux1_i686`` [![Docker Repository on Quay](https://quay.io/repository/pypa/manylinux1_i686/status "Docker Repository on Quay")](https://quay.io/repository/pypa/manylinux1_i686)
+- 64-bit image (x86-64): ``dockcross/manylinux-x64`` [Docker Repository on DockerHub](https://hub.docker.com/r/dockcross/manylinux-x64/)
+- 32-bit image (i686): ``dockcross/manylinux-x86`` [Docker Repository on DockerHub](https://hub.docker.com/r/dockcross/manylinux-x86/)
 
 This sample project contains a very simple C compile extension module that links
 to an external library (ATLAS, a linear algebra library). The build is
@@ -28,7 +28,7 @@ Continuous integration setup with Travis + Docker
 The `.travis.yml` file in this repository sets up the build environment. The
 resulting build logs can be found at
 
-  https://travis-ci.org/pypa/python-manylinux-demo
+  https://travis-ci.org/dockcross/python-manylinux-demo
 
 The `.travis.yml` file instructs Travis to run the script
 `travis/build-wheels.sh` inside of the 32-bit and 64-bit manylinux1 docker
