@@ -11,6 +11,10 @@ matrix:
       services:
         - docker
       env: DOCKER_IMAGE=dockcross/manylinux-x86
+    - sudo: required
+      services:
+        - docker
+      env: DOCKER_IMAGE=dockcross/manylinux2014-aarch64
 
 install:
   - docker pull $DOCKER_IMAGE
