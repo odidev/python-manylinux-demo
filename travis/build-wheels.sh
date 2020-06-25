@@ -2,7 +2,7 @@
 set -e -x
 
 # Install a system package required by our library
-sudo yum install -y atlas-devel
+/usr/local/bin/sudo yum install -y atlas-devel
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
