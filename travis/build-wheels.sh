@@ -6,7 +6,7 @@ set -e -x
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
-    sudo ${PYBIN}/pip install -r ./dev-requirements.txt
+    /usr/local/bin/sudo ${PYBIN}/pip install -r ./dev-requirements.txt
     ${PYBIN}/pip wheel . -w wheelhouse/
 done
 
