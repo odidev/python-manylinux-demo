@@ -2,11 +2,11 @@
 set -e -x
 
 # Install a system package required by our library
-/usr/local/bin/sudo yum install -y atlas-devel
+sudo yum install -y atlas-devel
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
-    /usr/local/bin/sudo ${PYBIN}/pip install -r ./dev-requirements.txt
+    sudo ${PYBIN}/pip install -r ./dev-requirements.txt
     ${PYBIN}/pip wheel . -w wheelhouse/
 done
 
