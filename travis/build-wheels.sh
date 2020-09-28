@@ -6,7 +6,8 @@ sudo yum install -y atlas-devel
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
-    file ${PYBIN}/pip
+    file ${PYBIN}/python
+    file /opt/_internal/cpython-*/bin/python
     cat ${PYBIN}/pip
 
 sudo ${PYBIN}/pip install -r ./dev-requirements.txt
